@@ -195,7 +195,7 @@ function run(prog: Uint8Array, input: Uint8Array) {
         sp -= 2;
         break;
       case 0x50: {
-        let s = String(st[sp - 1]);
+        const s = String(st[sp - 1]);
         if (olen + s.length > OUT_MAX) return stop(11);
         olen += out.write(s, olen, 'ascii');
         sp--;
